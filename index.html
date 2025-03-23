@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivansh's Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: url('https://iili.io/3IA7QqX.webp') no-repeat center center/cover;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+        .profile-pic {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+        .name {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 4px rgba(255, 255, 255, 0.5), 0 0 8px rgba(255, 255, 255, 0.5), 0 0 12px rgba(255, 255, 255, 0.5);
+            background: linear-gradient(45deg, #ffffff, #e0e0e0, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glitter 1.5s infinite alternate;
+        }
+        @keyframes glitter {
+            0% { text-shadow: 0 0 4px rgba(255, 255, 255, 0.5), 0 0 8px rgba(255, 255, 255, 0.5), 0 0 12px rgba(255, 255, 255, 0.5); }
+            100% { text-shadow: 0 0 6px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.7), 0 0 14px rgba(255, 255, 255, 0.7); }
+        }
+        .bio {
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0.9;
+            margin: 10px 0;
+        }
+        .location {
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+        .socials {
+            margin-top: 15px;
+        }
+        .socials a {
+            margin: 0 10px;
+            font-size: 2rem;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6);
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
+        }
+        .socials a:hover {
+            color: #ff4d4d;
+            text-shadow: 0 0 10px rgba(255, 77, 77, 1), 0 0 15px rgba(255, 77, 77, 1);
+        }
+        .view-counter {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 0.8rem;
+            opacity: 0.8;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 3px 10px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://iili.io/3IAPQNs.webp" alt="Profile Picture" class="profile-pic">
+        <h1 class="name">Shivansh</h1>
+        <p class="bio">"idk. but <i>I'm chill and cool</i> (>_<)"</p>
+        <p class="location">📍 Somewhere in the Universe</p>
+        <div class="socials">
+            <a href="https://discord.com/users/shiva1211_" target="_blank">🌀 Discord</a>
+            <a href="https://open.spotify.com/user/_newtonsir_" target="_blank">🎵 Spotify</a>
+            <a href="https://instagram.com/_newtonsir" target="_blank">📸 Instagram</a>
+            <a href="https://t.me/mrvilukt" target="_blank">✈️ Telegram</a>
+        </div>
+        <div class="view-counter">👁️ <span id="viewCount">0</span></div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let views = localStorage.getItem("page_views");
+            if (!views) {
+                views = 0;
+            }
+            views++;
+            localStorage.setItem("page_views", views);
+            document.getElementById("viewCount").textContent = views;
+        });
+    </script>
+</body>
+</html>
